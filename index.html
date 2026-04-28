@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Joyeux Anniversaire ✨</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5ebe0, #eae0d5);
+    overflow: hidden;
+}
+
+/* Décor doré */
+.gold-deco {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,175,55,0.4), transparent);
+    filter: blur(40px);
+}
+
+.deco1 {
+    width: 250px;
+    height: 250px;
+    top: 5%;
+    left: 10%;
+}
+
+.deco2 {
+    width: 300px;
+    height: 300px;
+    bottom: 5%;
+    right: 10%;
+}
+
+/* Bouton élégant */
+.card {
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 35px 50px;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid rgba(212,175,55,0.5);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* Texte bouton */
+.card span {
+    font-size: 18px;
+    font-weight: 500;
+    color: #8c6b2f;
+    letter-spacing: 1px;
+}
+
+/* Contenu */
+.content {
+    display: none;
+    width: 360px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid rgba(212,175,55,0.4);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    animation: fadeIn 1s ease;
+}
+
+/* Titre */
+h1 {
+    color: #bfa14a;
+    margin-bottom: 10px;
+}
+
+/* Photo */
+.content img {
+    width: 100%;
+    border-radius: 15px;
+    margin: 15px 0;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: showPhoto 1s forwards;
+    animation-delay: 0.4s;
+    border: 2px solid rgba(212,175,55,0.4);
+}
+
+/* Lettre */
+.letter {
+    background: rgba(255, 248, 220, 0.6);
+    padding: 15px;
+    border-radius: 12px;
+    color: #6d5d3b;
+    line-height: 1.6;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: showText 1s forwards;
+    animation-delay: 0.8s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.9);}
+    to {opacity: 1; transform: scale(1);}
+}
+
+@keyframes showPhoto {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes showText {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Décor -->
+<div class="gold-deco deco1"></div>
+<div class="gold-deco deco2"></div>
+
+<!-- Bouton -->
+<div class="card" onclick="openCard()">
+    <span>✨ Ouvrir ton cadeau ✨</span>
+</div>
+
+<!-- Contenu -->
+<div class="content" id="content">
+    <h1>Joyeux Anniversaire ✨</h1>
+
+    <img src="imene/imene.jpeg" alt="Notre photo">
+
+    <div class="letter">
+        Ma chère cousine 💛,<br><br>
+        En ce jour magnifique, je te souhaite une vie remplie de bonheur,  
+        de réussite et de moments précieux ✨.<br><br>
+        Tu es une personne exceptionnelle et je suis vraiment chanceuse  
+        de t’avoir dans ma vie 💫.<br><br>
+        Je t’aime énormément 💛
+    </div>
+</div>
+
+<script>
+function openCard() {
+    document.querySelector('.card').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
